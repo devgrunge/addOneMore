@@ -5,16 +5,19 @@ import { StyleSheet, Text, View , Button } from 'react-native';
 export default function App() {
 
    const [number , setNumber] = useState(0)
-function addonemore() {
+function addOneMore() {
   setNumber(number + 1)
-  
-}
+  }
+  function lessOneMore() {
+    setNumber(number - 1)
+  }
 
     return (
         <View style={styles.container}>
             <Text style={styles.title}>o número é: {number}</Text>
             <StatusBar style="auto" />
-            <Button tittle= "Add +1" onPress={addonemore}/>
+            <Button style={styles.button} tittle= "Add +1" onPress={addOneMore}/>
+            <Button style={styles.button} tittle= "Less -1" onPress={lessOneMore}/>
         </View>
     );
 }
@@ -28,5 +31,9 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 32,
+    },
+    button: {
+        width: 30,
+        height: 30,
     }
 });
